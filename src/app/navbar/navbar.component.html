@@ -1,0 +1,61 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()" mat-stroked-button color="primary">
+      Ver/Ocultar barra lateral
+    </button>
+     <form [formGroup]="miFormulario">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+        <mat-error *ngIf="miFormulario.get('nombre')?.errors?.['required'] && !miFormulario.get('nombre')?.hasError('minlength')">
+          El nombre es requerido
+        </mat-error>       
+         <mat-error *ngIf="miFormulario.get('nombre')?.hasError('minlength')">Debe tener 3 caracteres al menos</mat-error>
+      </mat-form-field>
+   
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido">
+        <mat-error *ngIf="miFormulario.get('apellido')?.errors?.['required'] && !miFormulario.get('apellido')?.hasError('minlength')">
+          El apellido es requerido
+        </mat-error>        
+        <mat-error *ngIf="miFormulario.get('apellido')?.hasError('minlength')">Debe tener 3 caracteres al menos</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>DNI</mat-label>
+        <input matInput formControlName="dni">
+        <mat-error *ngIf="miFormulario.get('dni')?.errors?.['required'] && !miFormulario.get('dni')?.hasError('maxlength')">
+          El DNI es requerido
+        </mat-error>
+        <mat-error *ngIf="miFormulario.get('dni')?.hasError('maxlength')">Debe tener 8 caracteres como máximo</mat-error>
+      </mat-form-field>
+     
+      <mat-form-field appearance="fill">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput formControlName="email">
+        <mat-error>El correo electrónico es requerido.</mat-error>
+      </mat-form-field>  
+      </form>  
+      
+     <!-- <mat-form-field appearance="fill">
+        <mat-label>Fecha de registro</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaRegistro">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>La fecha de registro es requerida.</mat-error>
+      </mat-form-field> -->
+     
+      
+    
+  </div>
+</mat-drawer-container>

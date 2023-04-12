@@ -1,0 +1,16 @@
+.example-container {
+  /* recordar que los div siempre toman el 100% por ser un elemento de bloque  
+     Igualmente, se puede utilizar 100vw o 100% (aunque no hace falta ponerlos)
+  */
+   width: 100vw;  
+  height: 100vh;
+}
+
+.example-sidenav-content {
+  height: 100%;
+  padding: 1rem
+}
+
+.example-sidenav {
+  padding: 20px;
+}
