@@ -8,10 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Material
 import { ToolbarModule } from './toolbar/toolbar.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { TitleSizeDirective } from './title-size.directive';
+import { FullNamePipe } from './navbar/full-name.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleSizeDirective
   ],
   imports: [
     BrowserModule,
