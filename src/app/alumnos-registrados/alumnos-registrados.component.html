@@ -1,0 +1,38 @@
+<h1>Alumnos registrados </h1>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido">
+    <mat-header-cell *matHeaderCellDef>Apellido</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.apellido }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="edad">
+    <mat-header-cell *matHeaderCellDef>Edad</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.edad }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="correoElectronico">
+    <mat-header-cell *matHeaderCellDef>Correo Electrónico</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.correoElectronico }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let persona">
+      <button mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

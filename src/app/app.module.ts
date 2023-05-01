@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
 import { ToolbarModule } from './toolbar/toolbar.module';
-import { NavbarModule } from './navbar/navbar.module';
+import { NavbarModule } from './abm-alumnos/abm-alumnos.module';
 import { TitleSizeDirective } from './title-size.directive';
-import { FullNamePipe } from './navbar/full-name.pipe';
+import { AlumnosRegistradosModule } from './alumnos-registrados/alumnos-registrados.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { FullNamePipe } from './navbar/full-name.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     ToolbarModule,
-    NavbarModule
+    NavbarModule,
+    AlumnosRegistradosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

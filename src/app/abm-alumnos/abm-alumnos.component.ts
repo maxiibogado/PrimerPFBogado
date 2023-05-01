@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { DatosMockeadosService } from '../datos-mockeados.service';
 
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  templateUrl: './abm-alumnos.component.html',
+  styleUrls: ['./abm-alumnos.component.css']
 })
 export class NavbarComponent implements OnInit {
 
@@ -28,7 +29,7 @@ export class NavbarComponent implements OnInit {
 
   miFormulario: FormGroup = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private datosMockeado: DatosMockeadosService) { }
 
   ngOnInit() {
     this.miFormulario = this.formBuilder.group({

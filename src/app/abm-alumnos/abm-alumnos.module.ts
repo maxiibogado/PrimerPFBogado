@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Componentes
-import { NavbarComponent } from './navbar.component';
+import { NavbarComponent } from './abm-alumnos.component';
 
 // Reactive
 import { ReactiveFormsModule } from '@angular/forms';
